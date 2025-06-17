@@ -53,8 +53,9 @@ table {
     --size-1:1em;
     --size-2:1.5em;
     --size-3:2em;
-    --size-4:2.5em;
-    --size-5:3em;
+    --size-4:2.25em;
+    --size-5:2.5em;
+    --size-6:3em;
     --sf-column-count: 5;
     --sf-grid-template-area: "fm m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 m2 fm2";
 }
@@ -77,4 +78,35 @@ table {
 
 .-sf-grid-fluid {
     grid-column:fm/fm2;
+}
+
+/*font*/
+
+h1 {
+    font-size: var(--size-6);
+}
+
+h2 {
+    font-size:var(--size-5);
+}
+
+h3 {
+    font-size:var(--size-4);
+}
+
+h4 {
+    font-size:var(--size-3);
+}
+
+h5 {
+    font-size:var(--size-2);
+}
+
+h6 {
+    font-size:var(--size-1);
+    font-weight: bold;
+}
+
+p {
+    font-size: var(--size-1);
 }
