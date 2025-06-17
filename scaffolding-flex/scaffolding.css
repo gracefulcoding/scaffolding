@@ -46,7 +46,8 @@ table {
 
 :root {
     /*variables*/
-    --margin:0;
+    --margin:15px;
+    --size-05:0.5em;
     --size-1:1em;
     --size-2:1.5em;
     --size-3:2em;
@@ -54,5 +55,64 @@ table {
     --size-5:3em;
 }
 
+.sf-container {
+    width:100%;
+    padding: repeat(var(--margin), auto);
+    margin: auto;
+}
 
+.sf-container-fluid {
+    width:100%;
+    padding: repeat(var(--margin), auto);
+    margin: auto;
+}
 
+/*set flex on row and add wrap*/
+
+.sf-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.sf-col {
+    flex-basis:0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width:100%
+}
+
+.sf-border {
+    border: solid 1px orange;
+}
+
+@media (min-width:576px) {
+    .sf-container {
+        max-width: 540px;
+    }
+    
+    .sf-col {
+        width:50%
+    }
+}
+
+@media (min-width:768px) {
+    .sf-container {
+        max-width: 720px;
+    }  
+}
+
+@media (min-width:992px) {
+    .sf-container {
+        max-width: 960px;
+    }  
+}
+
+@media (min-width:1024px) {
+    .sf-container {
+        max-width: 1024px;
+    }  
+}
