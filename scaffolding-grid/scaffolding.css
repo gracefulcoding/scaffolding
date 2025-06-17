@@ -1,0 +1,112 @@
+/*css reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+    /*variables*/
+    --sf-container: 1024px;
+    /*get container width including margins, divide by 2 then subtract by container width*/
+    --sf-fluid-area: calc(50vw - var(--sf-container));
+    --sf-col: 1fr;
+    --size-1:1em;
+    --size-2:1.5em;
+    --size-3:2em;
+    --size-4:2.25em;
+    --size-5:2.5em;
+    --size-6:3em;
+    --sf-column-count: 5;
+    --sf-grid-template-area: "fm m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 m2 fm2";
+}
+
+.sf-grid {
+    display:grid;
+}
+
+@media (min-width: 768px){
+    :root {
+        --sf-column-count: 11;
+        --sf-grid-template-area: "fm m1 c1 g1 c2 g2 c3 g3 c4 g4 c5 g5 c6 g6 c7 g7 c8 g8 c9 g9 c10 g10 c11 g11 c12 g12 m2 fm2";
+    }
+
+}
+
+.sf-grid-margin {
+    grid-column: m1-end/m2-start;
+}
+
+.-sf-grid-fluid {
+    grid-column:fm/fm2;
+}
+
+/*font*/
+
+h1 {
+    font-size: var(--size-6);
+}
+
+h2 {
+    font-size:var(--size-5);
+}
+
+h3 {
+    font-size:var(--size-4);
+}
+
+h4 {
+    font-size:var(--size-3);
+}
+
+h5 {
+    font-size:var(--size-2);
+}
+
+h6 {
+    font-size:var(--size-1);
+    font-weight: bold;
+}
+
+p {
+    font-size: var(--size-1);
+}
