@@ -4,41 +4,64 @@
 </head>
 <body>
     <header>
-        <h1>Heading</h1>
+        <div class="sf-container-fluid">
+            <div class="sf-row">
+                <div class="sf-col sf-justify-center sf-align-center sf-padding">
+                    <h1>Scaffolding.css</h1>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
-        <div class="sf-container-fluid sf-border">
-            <div class="sf-row sf-border">
-                <div class="sf-col sf-border">
-                    box1
-                </div>
-                <div class="sf-col sf-border">
-                    box1
-                </div>
-                <div class="sf-col sf-border">
-                    box1
-                </div>
+        <!--images-->
+        <div class="sf-container">
+            <div class="sf-row sf-justify-center sf-align-center sf-padding">
+                <h2>Images</h2>
             </div>
-            <div class="sf-row sf-border">
-                <div class="sf-col sf-border">
-                    box1
-                </div>
-            </div>
-            <div class="sf-row sf-border">
-                <div class="sf-col-12 sf-col-3--sm sf-justify-center sf-justify-end--sm sf-border makeflex">
-                    <div class="sf-col-6 sf-justify-star sf-border">
-                        <p>hello</p>
+            <div class="sf-row sf-padding">
+                <div class="sf-col sf-justify-center sf-align-center">
+                    <div class="sf-row">
+                        <div class="sf-col sf-justify-center sf-align-center">
+                            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/7COTP3WKQMI6TFQVR4NDFFROAQ.jpg&w=300" alt="Photograph of a group of workers eating lunch, sitting side by side on a steel beam 850 feet in the air"/>
+                        </div>
+                        <div class="sf-col sf-padding sf-center text-right">
+                            <h3>Image non tabbable, default for ADA screen readers</h3>
+                        </div>
                     </div>
-                    <p>box1</p>
                 </div>
-                <div class="sf-col-12 sf-col-3--sm sf-justify-center sf-justify-end--sm sf-border">
-                    <p>box1</p>
+                <div class="sf-col sf-justify-center sf-align-center">
+                    <div class="sf-row">
+                        <div class="sf-col sf-justify-center sf-align-center">
+                            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/7COTP3WKQMI6TFQVR4NDFFROAQ.jpg&w=300" alt="Photograph of a group of workers eating lunch, sitting side by side on a steel beam 850 feet in the air" tabindex="0"/>
+                        </div>
+                        <div class="sf-col sf-padding sf-center text-right">
+                            <h3>Image tabbable, non default for screen reader</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="sf-col-12 sf-col-3--sm sf-justify-center sf-justify-end--sm sf-border">
-                    <p>box1</p>
+            </div>
+            <div class="sf-row sf-padding">
+                <div class="sf-col sf-align-center">
+                    <div class="sf-row">
+                        <div class="sf-col sf-align-center">
+                            <img class="half-opacity" src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/7COTP3WKQMI6TFQVR4NDFFROAQ.jpg&w=300" alt="Photograph of a group of workers eating lunch, sitting side by side on a steel beam 850 feet in the air"/>
+                        </div>
+                        <div class="sf-col sf-padding sf-center text-right">
+                            <h3>Image 50% opacity</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="sf-col-12 sf-col-3--sm sf-justify-center sf-justify-end--sm sf-border">
-                    <p>box1</p>
+                <div class="sf-col sf-justify-center sf-align-center">
+                    <div class="sf-row">
+                        <div class="sf-col sf-align-center sf-relative">
+                            <div class="sf-demo-color sf-relative"></div>
+                            <img class="sf-absolute toback" src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/7COTP3WKQMI6TFQVR4NDFFROAQ.jpg&w=300" alt="Photograph of a group of workers eating lunch, sitting side by side on a steel beam 850 feet in the air"/>
+                        </div>
+                        <div class="sf-col sf-padding sf-center text-right">
+                                <h3>Image with opacity color</h3>
+                                <p>Note: this requires exact pixels as it uses relative and absolute positioning</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
