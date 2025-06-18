@@ -53,16 +53,28 @@ table {
     --size-3:2em;
     --size-4:2.5em;
     --size-5:3em;
+    --max: 100%;
+    --half: 50%;
+    --col-1: 8.333333%;
+    --col-2: 16.666667%;
+    --col-3: 24.666667%;
+    --col-4: 33.333333%;
+    --col-5: 41.666667%;
+    --col-7: 58.333333%;
+    --col-8: 66.666667%;
+    --col-9: 74.666667%;
+    --col-10: 83.333333%;
+    --col-11: 91.666667%;
 }
 
 .sf-container {
-    width:100%;
+    width:var(--max);
     padding: repeat(var(--margin), auto);
     margin: auto;
 }
 
 .sf-container-fluid {
-    width:100%;
+    width:var(--max);
     padding: repeat(var(--margin), auto);
     margin: auto;
 }
@@ -77,42 +89,800 @@ table {
     flex-wrap: wrap;
 }
 
+/*remove wrap on row if desired*/
+
+.nowrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/*make something flex*/
+
+.makeflex {
+    display: flex;
+}
+
+/*basic columns, columns follow 12 grid system, similar to bootstrap*/
+
 .sf-col {
     flex-basis:0;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    width:100%
+    width:var(--max);
+}
+
+.sf-col-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--max);
+    flex: 0 0 var(--max);
+    max-width: var(--max);
+}
+
+.sf-col-11 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-11);
+    flex: 0 0 var(--col-11);
+    max-width: var(--col-11);
+}
+
+.sf-col-10 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-10);
+    flex: 0 0 var(--col-10);
+    max-width: var(--col-10);
+}
+
+.sf-col-9 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-9);
+    flex: 0 0 var(--col-9);
+    max-width: var(--col-9);
+}
+
+.sf-col-8 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-8);
+    flex: 0 0 var(--col-8);
+    max-width: var(--col-8);
+}
+
+.sf-col-7 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-7);
+    flex: 0 0 var(--col-7);
+    max-width: var(--col-7);
+}
+
+.sf-col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--half);
+    flex: 0 0 var(--half);
+    max-width: var(--half);
+}
+
+.sf-col-5{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-5);
+    flex: 0 0 var(--col-5);
+    max-width: var(--col-5);
+}
+
+.sf-col-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-4);
+    flex: 0 0 var(--col-4);
+    max-width: var(--col-4);
+}
+
+.sf-col-3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-3);
+    flex: 0 0 var(--col-3);
+    max-width: var(--col-3);
+}
+
+.sf-col-2 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-2);
+    flex: 0 0 var(--col-2);
+    max-width: var(--col-2);
+}
+
+.sf-col-1 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 var(--col-1);
+    flex: 0 0 var(--col-1);
+    max-width: var(--col-1);
+}
+
+/* align and justify, these go on the columns NOT the rows */
+
+.sf-align-start {
+    display:flex;
+    align-items: start;   
+}
+
+.sf-align-center {
+    display:flex;
+    align-items: center;
+}
+
+.sf-align-end {
+    display:flex;
+    align-items: end;
+}
+
+.sf-justify-start {
+    display:flex;
+    justify-content: start;
+}
+
+.sf-justify-center {
+    display:flex;
+    justify-content: center;
+}
+
+.sf-justify-end {
+    display:flex;
+    justify-content: end;
 }
 
 .sf-border {
     border: solid 1px orange;
 }
 
-@media (min-width:576px) {
+@media (max-width:375px) {
+
+    .sf-container {
+        max-width: 340px;
+    }
+
+    /*default row behavior removes wrap, add back on mobile settings with wrap-xsm*/
+
+    .sf-row {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .wrap-xsm {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .makeflex--xsm {
+        display: flex;
+    }
+
+    /* align and justify, these go on the columns NOT the rows */
+
+.sf-align-start--xsm {
+    display:flex;
+    align-items: start;   
+}
+
+.sf-align-center--xsm {
+    display:flex;
+    align-items: center;
+}
+
+.sf-align-end--xsm {
+    display:flex;
+    align-items: end;
+}
+
+.sf-justify-start--xsm {
+    display:flex;
+    justify-content: start;
+}
+
+.sf-justify-center--xsm {
+    display:flex;
+    justify-content: center;
+}
+
+.sf-justify-end--xsm {
+    display:flex;
+    justify-content: end;
+}
+
+    /*media queried columns*/
+
+    .sf-col-11--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-11);
+        flex: 0 0 var(--col-11);
+        max-width: var(--col-11);
+    }
+    
+    .sf-col-10--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-10);
+        flex: 0 0 var(--col-10);
+        max-width: var(--col-10);
+    }
+    
+    .sf-col-9--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-9);
+        flex: 0 0 var(--col-9);
+        max-width: var(--col-9);
+    }
+    
+    .sf-col-8--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-8);
+        flex: 0 0 var(--col-8);
+        max-width: var(--col-8);
+    }
+    
+    .sf-col-7--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-7);
+        flex: 0 0 var(--col-7);
+        max-width: var(--col-7);
+    }
+    
+    .sf-col-6--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--half);
+        flex: 0 0 var(--half);
+        max-width: var(--half);
+    }
+    
+    .sf-col-5--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-5);
+        flex: 0 0 var(--col-5);
+        max-width: var(--col-5);
+    }
+    
+    .sf-col-4--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-4);
+        flex: 0 0 var(--col-4);
+        max-width: var(--col-4);
+    }
+    
+    .sf-col-3--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-3);
+        flex: 0 0 var(--col-3);
+        max-width: var(--col-3);
+    }
+    
+    .sf-col-2--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-2);
+        flex: 0 0 var(--col-2);
+        max-width: var(--col-2);
+    }
+    
+    .sf-col-1--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-1);
+        flex: 0 0 var(--col-1);
+        max-width: var(--col-1);
+    }
+    
+}
+
+
+@media (max-width:576px) {
+
     .sf-container {
         max-width: 540px;
     }
+
+    .makeflex--sm {
+        display: flex;
+    }
+
+    /*default row behavior removes wrap, add back on mobile settings with wrap-xsm*/
+
+    .sf-row {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .wrap-sm {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /* align and justify, these go on the columns NOT the rows */
+
+.sf-align-start--sm {
+    display:flex;
+    align-items: start;   
+}
+
+.sf-align-center--sm {
+    display:flex;
+    align-items: center;
+}
+
+.sf-align-end--sm {
+    display:flex;
+    align-items: end;
+}
+
+.sf-justify-start--sm {
+    display:flex;
+    justify-content: start;
+}
+
+.sf-justify-center--sm {
+    display:flex;
+    justify-content: center;
+}
+
+.sf-justify-end--sm {
+    display:flex;
+    justify-content: end;
+}
+
+    /*media queried columns*/
+
+    .sf-col-11--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-11);
+        flex: 0 0 var(--col-11);
+        max-width: var(--col-11);
+    }
     
-    .sf-col {
-        width:50%
+    .sf-col-10--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-10);
+        flex: 0 0 var(--col-10);
+        max-width: var(--col-10);
+    }
+    
+    .sf-col-9--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-9);
+        flex: 0 0 var(--col-9);
+        max-width: var(--col-9);
+    }
+    
+    .sf-col-8--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-8);
+        flex: 0 0 var(--col-8);
+        max-width: var(--col-8);
+    }
+    
+    .sf-col-7--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-7);
+        flex: 0 0 var(--col-7);
+        max-width: var(--col-7);
+    }
+    
+    .sf-col-6--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--half);
+        flex: 0 0 var(--half);
+        max-width: var(--half);
+    }
+    
+    .sf-col-5--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-5);
+        flex: 0 0 var(--col-5);
+        max-width: var(--col-5);
+    }
+    
+    .sf-col-4--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-4);
+        flex: 0 0 var(--col-4);
+        max-width: var(--col-4);
+    }
+    
+    .sf-col-3--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-3);
+        flex: 0 0 var(--col-3);
+        max-width: var(--col-3);
+    }
+    
+    .sf-col-2--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-2);
+        flex: 0 0 var(--col-2);
+        max-width: var(--col-2);
+    }
+    
+    .sf-col-1--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-1);
+        flex: 0 0 var(--col-1);
+        max-width: var(--col-1);
+    }
+    
+}
+
+@media (max-width:768px) {
+
+    .sf-container {
+        max-width: 720px;
+    } 
+
+    .sf-row {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .makeflex--md {
+        display: flex;
+    }
+
+    .wrap-md {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /* align and justify, these go on the columns NOT the rows */
+
+.sf-align-start--md {
+    display:flex;
+    align-items: start;   
+}
+
+.sf-align-center--md {
+    display:flex;
+    align-items: center;
+}
+
+.sf-align-end--md {
+    display:flex;
+    align-items: end;
+}
+
+.sf-justify-start--md {
+    display:flex;
+    justify-content: start;
+}
+
+.sf-justify-center--md {
+    display:flex;
+    justify-content: center;
+}
+
+.sf-justify-end--md {
+    display:flex;
+    justify-content: end;
+}
+
+    /*media queried columns*/
+    
+    .sf-col-11--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-11);
+        flex: 0 0 var(--col-11);
+        max-width: var(--col-11);
+    }
+    
+    .sf-col-10--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-10);
+        flex: 0 0 var(--col-10);
+        max-width: var(--col-10);
+    }
+    
+    .sf-col-9--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-9);
+        flex: 0 0 var(--col-9);
+        max-width: var(--col-9);
+    }
+    
+    .sf-col-8--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-8);
+        flex: 0 0 var(--col-8);
+        max-width: var(--col-8);
+    }
+    
+    .sf-col-7--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-7);
+        flex: 0 0 var(--col-7);
+        max-width: var(--col-7);
+    }
+    
+    .sf-col-6--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--half);
+        flex: 0 0 var(--half);
+        max-width: var(--half);
+    }
+    
+    .sf-col-5--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-5);
+        flex: 0 0 var(--col-5);
+        max-width: var(--col-5);
+    }
+    
+    .sf-col-4--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-4);
+        flex: 0 0 var(--col-4);
+        max-width: var(--col-4);
+    }
+    
+    .sf-col-3--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-3);
+        flex: 0 0 var(--col-3);
+        max-width: var(--col-3);
+    }
+    
+    .sf-col-2--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-2);
+        flex: 0 0 var(--col-2);
+        max-width: var(--col-2);
+    }
+    
+    .sf-col-1--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-1);
+        flex: 0 0 var(--col-1);
+        max-width: var(--col-1);
     }
 }
 
-@media (min-width:768px) {
-    .sf-container {
-        max-width: 720px;
-    }  
-}
-
-@media (min-width:992px) {
+@media (max-width:992px) {
     .sf-container {
         max-width: 960px;
-    }  
+    }
+    
+    .nowrap-lg {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .makeflex--lg {
+        display: flex;
+    }
+
+    /* align and justify, these go on the columns NOT the rows */
+
+.sf-align-start--lg {
+    display:flex;
+    align-items: start;   
+}
+
+.sf-align-center--lg {
+    display:flex;
+    align-items: center;
+}
+
+.sf-align-end--lg {
+    display:flex;
+    align-items: end;
+}
+
+.sf-justify-start--lg {
+    display:flex;
+    justify-content: start;
+}
+
+.sf-justify-center--lg {
+    display:flex;
+    justify-content: center;
+}
+
+.sf-justify-end--lg {
+    display:flex;
+    justify-content: end;
+}
+
+    /*media queried columns*/
+
+    .sf-col-11--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-11);
+        flex: 0 0 var(--col-11);
+        max-width: var(--col-11);
+    }
+    
+    .sf-col-10--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-10);
+        flex: 0 0 var(--col-10);
+        max-width: var(--col-10);
+    }
+    
+    .sf-col-9--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-9);
+        flex: 0 0 var(--col-9);
+        max-width: var(--col-9);
+    }
+    
+    .sf-col-8--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-8);
+        flex: 0 0 var(--col-8);
+        max-width: var(--col-8);
+    }
+    
+    .sf-col-7--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-7);
+        flex: 0 0 var(--col-7);
+        max-width: var(--col-7);
+    }
+    
+    .sf-col-6--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--half);
+        flex: 0 0 var(--half);
+        max-width: var(--half);
+    }
+    
+    .sf-col-5--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-5);
+        flex: 0 0 var(--col-5);
+        max-width: var(--col-5);
+    }
+    
+    .sf-col-4--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-4);
+        flex: 0 0 var(--col-4);
+        max-width: var(--col-4);
+    }
+    
+    .sf-col-3--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-3);
+        flex: 0 0 var(--col-3);
+        max-width: var(--col-3);
+    }
+    
+    .sf-col-2--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-2);
+        flex: 0 0 var(--col-2);
+        max-width: var(--col-2);
+    }
+    
+    .sf-col-1--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-1);
+        flex: 0 0 var(--col-1);
+        max-width: var(--col-1);
+    }
 }
 
 @media (min-width:1024px) {
     .sf-container {
         max-width: 1024px;
-    }  
+    }
+
+    .nowrap-xlg {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .makeflex--xlg {
+        display: flex;
+    }
+
+    /* align and justify, these go on the columns NOT the rows */
+
+.sf-align-start--xlg {
+    display:flex;
+    align-items: start;   
+}
+
+.sf-align-center--xlg {
+    display:flex;
+    align-items: center;
+}
+
+.sf-align-end--xlg {
+    display:flex;
+    align-items: end;
+}
+
+.sf-justify-start--xlg {
+    display:flex;
+    justify-content: start;
+}
+
+.sf-justify-center--xlg {
+    display:flex;
+    justify-content: center;
+}
+
+.sf-justify-end--xlg {
+    display:flex;
+    justify-content: end;
+}
+
+    /*media queried columns*/
+    
+    .sf-col-11--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-11);
+        flex: 0 0 var(--col-11);
+        max-width: var(--col-11);
+    }
+    
+    .sf-col-10--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-10);
+        flex: 0 0 var(--col-10);
+        max-width: var(--col-10);
+    }
+    
+    .sf-col-9--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-9);
+        flex: 0 0 var(--col-9);
+        max-width: var(--col-9);
+    }
+    
+    .sf-col-8--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-8);
+        flex: 0 0 var(--col-8);
+        max-width: var(--col-8);
+    }
+    
+    .sf-col-7--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-7);
+        flex: 0 0 var(--col-7);
+        max-width: var(--col-7);
+    }
+    
+    .sf-col-6--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--half);
+        flex: 0 0 var(--half);
+        max-width: var(--half);
+    }
+    
+    .sf-col-5--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-5);
+        flex: 0 0 var(--col-5);
+        max-width: var(--col-5);
+    }
+    
+    .sf-col-4--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-4);
+        flex: 0 0 var(--col-4);
+        max-width: var(--col-4);
+    }
+    
+    .sf-col-3--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-3);
+        flex: 0 0 var(--col-3);
+        max-width: var(--col-3);
+    }
+    
+    .sf-col-2--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-2);
+        flex: 0 0 var(--col-2);
+        max-width: var(--col-2);
+    }
+    
+    .sf-col-1--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--col-1);
+        flex: 0 0 var(--col-1);
+        max-width: var(--col-1);
+    }
 }
