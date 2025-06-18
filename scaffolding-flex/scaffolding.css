@@ -68,7 +68,7 @@ table {
 }
 
 .sf-container {
-    width:var(--max);
+    max-width: 1024px;
     padding: repeat(var(--margin), auto);
     margin: auto;
 }
@@ -89,11 +89,51 @@ table {
     flex-wrap: wrap;
 }
 
+.sf-center{
+    margin: auto;
+}
+
+.sf-margin-left{
+    margin-left: var(--margin);
+}
+
+.sf-margin-right{
+    margin-right: var(--margin);    
+}
+
+.sf-margin-bottom{
+    margin-bottom: var(--margin);
+}
+
+.sf-margin-top{
+    margin-top: var(--margin);    
+}
+
+.sf-padding-left{
+    padding-left: var(--margin);
+}
+
+.sf-padding-right{
+    padding-right: var(--margin);    
+}
+
+.sf-padding-top{
+    padding-top: var(--margin);
+}
+
+.sf-padding-bottom{
+    padding-bottom: var(--margin);    
+}
+
+.sf-padding {
+    padding: var(--margin);
+}
+
 /*remove wrap on row if desired*/
 
 .nowrap {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
 /*make something flex*/
@@ -232,17 +272,47 @@ table {
     border: solid 1px orange;
 }
 
+.sf-relative {
+    position: relative;
+}
+
+.sf-absolute {
+    position: absolute;
+}
+
+.sf-demo-color {
+    background: orange;
+    width: 300px;
+    height: 236px;
+    opacity: 33%;
+}
+
+.toback {
+    z-index: -1000;
+}
+
+.half-opacity {
+    opacity:var(--half);
+}
+
+/*text align*/
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
 @media (max-width:375px) {
 
     .sf-container {
         max-width: 340px;
-    }
-
-    /*default row behavior removes wrap, add back on mobile settings with wrap-xsm*/
-
-    .sf-row {
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
     }
 
     .wrap-xsm {
@@ -287,6 +357,13 @@ table {
 }
 
     /*media queried columns*/
+
+    .sf-col-12--xsm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--max);
+        flex: 0 0 var(--max);
+        max-width: var(--max);
+    }
 
     .sf-col-11--xsm {
         -webkit-box-flex: 0;
@@ -378,12 +455,6 @@ table {
         display: flex;
     }
 
-    /*default row behavior removes wrap, add back on mobile settings with wrap-xsm*/
-
-    .sf-row {
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    }
 
     .wrap-sm {
         -ms-flex-wrap: wrap;
@@ -423,6 +494,13 @@ table {
 }
 
     /*media queried columns*/
+
+    .sf-col-12--sm {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--max);
+        flex: 0 0 var(--max);
+        max-width: var(--max);
+    }
 
     .sf-col-11--sm {
         -webkit-box-flex: 0;
@@ -509,11 +587,6 @@ table {
         max-width: 720px;
     } 
 
-    .sf-row {
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    }
-
     .makeflex--md {
         display: flex;
     }
@@ -556,6 +629,13 @@ table {
 }
 
     /*media queried columns*/
+
+    .sf-col-12--md {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--max);
+        flex: 0 0 var(--max);
+        max-width: var(--max);
+    }
     
     .sf-col-11--md {
         -webkit-box-flex: 0;
@@ -683,6 +763,13 @@ table {
 
     /*media queried columns*/
 
+    .sf-col-12--lg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--max);
+        flex: 0 0 var(--max);
+        max-width: var(--max);
+    }
+
     .sf-col-11--lg {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 var(--col-11);
@@ -808,6 +895,13 @@ table {
 }
 
     /*media queried columns*/
+
+    .sf-col-12--xlg {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 var(--max);
+        flex: 0 0 var(--max);
+        max-width: var(--max);
+    }
     
     .sf-col-11--xlg {
         -webkit-box-flex: 0;
